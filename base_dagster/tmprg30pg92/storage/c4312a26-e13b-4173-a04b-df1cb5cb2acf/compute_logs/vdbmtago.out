@@ -1,0 +1,62 @@
+Running with dbt=1.7.13
+Registered adapter: snowflake=1.7.0
+Found 324 models, 2041 tests, 7 seeds, 5 operations, 5 analyses, 36 sources, 0 exposures, 0 metrics, 1028 macros, 0 groups, 0 semantic models
+
+
+Running 3 on-run-start hooks
+1 of 3 START hook: base_models.on-run-start.0 .................................. [RUN]
+1 of 3 OK hook: base_models.on-run-start.0 ..................................... [[32mOK[0m in 0.00s]
+2 of 3 START hook: base_models.on-run-start.1 .................................. [RUN]
+2 of 3 OK hook: base_models.on-run-start.1 ..................................... [[32mOK[0m in 0.00s]
+3 of 3 START hook: livequery_models.on-run-start.0 ............................. [RUN]
+3 of 3 OK hook: livequery_models.on-run-start.0 ................................ [[32mOK[0m in 0.00s]
+
+Concurrency: 12 threads (target='dev')
+
+1 of 17 START sql incremental model silver.complete_lending_repayments ......... [RUN]
+1 of 17 OK created sql incremental model silver.complete_lending_repayments .... [[32mSUCCESS 6098[0m in 7.60s]
+2 of 17 START test dbt_expectations_expect_column_values_to_be_in_type_list_silver__complete_lending_repayments_AMOUNT_USD__decimal__float  [RUN]
+3 of 17 START test dbt_expectations_expect_row_values_to_have_recent_data_silver__complete_lending_repayments_BLOCK_TIMESTAMP__day__30  [RUN]
+4 of 17 START test dbt_utils_unique_combination_of_columns_silver__complete_lending_repayments_TX_HASH__EVENT_INDEX  [RUN]
+5 of 17 START test not_null_silver__complete_lending_repayments_AMOUNT ......... [RUN]
+6 of 17 START test not_null_silver__complete_lending_repayments_AMOUNT_UNADJ ... [RUN]
+7 of 17 START test not_null_silver__complete_lending_repayments_BLOCKCHAIN ..... [RUN]
+8 of 17 START test not_null_silver__complete_lending_repayments_BLOCK_NUMBER ... [RUN]
+9 of 17 START test not_null_silver__complete_lending_repayments_BLOCK_TIMESTAMP  [RUN]
+10 of 17 START test not_null_silver__complete_lending_repayments_BORROWER ...... [RUN]
+11 of 17 START test not_null_silver__complete_lending_repayments_EVENT_INDEX ... [RUN]
+12 of 17 START test not_null_silver__complete_lending_repayments_PAYER ......... [RUN]
+13 of 17 START test not_null_silver__complete_lending_repayments_PLATFORM ...... [RUN]
+7 of 17 PASS not_null_silver__complete_lending_repayments_BLOCKCHAIN ........... [[32mPASS[0m in 2.21s]
+14 of 17 START test not_null_silver__complete_lending_repayments_PROTOCOL_MARKET  [RUN]
+13 of 17 PASS not_null_silver__complete_lending_repayments_PLATFORM ............ [[32mPASS[0m in 2.21s]
+15 of 17 START test not_null_silver__complete_lending_repayments_TOKEN_ADDRESS . [RUN]
+11 of 17 PASS not_null_silver__complete_lending_repayments_EVENT_INDEX ......... [[32mPASS[0m in 2.23s]
+16 of 17 START test not_null_silver__complete_lending_repayments_TOKEN_SYMBOL .. [RUN]
+6 of 17 PASS not_null_silver__complete_lending_repayments_AMOUNT_UNADJ ......... [[32mPASS[0m in 2.25s]
+17 of 17 START test not_null_silver__complete_lending_repayments_TX_HASH ....... [RUN]
+9 of 17 PASS not_null_silver__complete_lending_repayments_BLOCK_TIMESTAMP ...... [[32mPASS[0m in 2.33s]
+12 of 17 PASS not_null_silver__complete_lending_repayments_PAYER ............... [[32mPASS[0m in 2.33s]
+10 of 17 PASS not_null_silver__complete_lending_repayments_BORROWER ............ [[32mPASS[0m in 2.33s]
+2 of 17 PASS dbt_expectations_expect_column_values_to_be_in_type_list_silver__complete_lending_repayments_AMOUNT_USD__decimal__float  [[32mPASS[0m in 2.35s]
+8 of 17 PASS not_null_silver__complete_lending_repayments_BLOCK_NUMBER ......... [[32mPASS[0m in 2.34s]
+5 of 17 PASS not_null_silver__complete_lending_repayments_AMOUNT ............... [[32mPASS[0m in 2.34s]
+3 of 17 PASS dbt_expectations_expect_row_values_to_have_recent_data_silver__complete_lending_repayments_BLOCK_TIMESTAMP__day__30  [[32mPASS[0m in 2.46s]
+4 of 17 PASS dbt_utils_unique_combination_of_columns_silver__complete_lending_repayments_TX_HASH__EVENT_INDEX  [[32mPASS[0m in 2.89s]
+16 of 17 PASS not_null_silver__complete_lending_repayments_TOKEN_SYMBOL ........ [[32mPASS[0m in 1.94s]
+14 of 17 PASS not_null_silver__complete_lending_repayments_PROTOCOL_MARKET ..... [[32mPASS[0m in 1.98s]
+15 of 17 PASS not_null_silver__complete_lending_repayments_TOKEN_ADDRESS ....... [[32mPASS[0m in 2.08s]
+17 of 17 PASS not_null_silver__complete_lending_repayments_TX_HASH ............. [[32mPASS[0m in 2.05s]
+
+Running 2 on-run-end hooks
+1 of 2 START hook: base_models.on-run-end.0 .................................... [RUN]
+1 of 2 OK hook: base_models.on-run-end.0 ....................................... [[32mOK[0m in 0.00s]
+2 of 2 START hook: livequery_models.on-run-end.0 ............................... [RUN]
+2 of 2 OK hook: livequery_models.on-run-end.0 .................................. [[32mOK[0m in 0.00s]
+
+
+Finished running 1 incremental model, 16 tests, 5 hooks in 0 hours 0 minutes and 21.53 seconds (21.53s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=17 WARN=0 ERROR=0 SKIP=0 TOTAL=17
